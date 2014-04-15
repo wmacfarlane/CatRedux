@@ -23,11 +23,19 @@ public class HealthScript : MonoBehaviour
   {
     hp -= damageCount;
 
-    if (hp <= 0)
+    if (hp <= 0 && !isEnemy)
     {
       // Dead!
       Destroy(gameObject);
+		SFXScript.Instance.MakeDeathSound();
     }
+
+		if (hp <= 0 && isEnemy)
+		{
+			// Dead!
+			Destroy(gameObject);
+			SFXScript.Instance.MakeEnemyDeathSound();
+		}
 
 
   }
