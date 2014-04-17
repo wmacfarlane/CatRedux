@@ -12,7 +12,8 @@ public class WeaponScript : MonoBehaviour
   /// <summary>
   /// Projectile prefab for shooting
   /// </summary>
-  public Transform shotPrefab;
+  public Transform backwardPrefab;
+  public Transform forwardPrefab;
 
   /// <summary>
   /// Cooldown in seconds between two shots
@@ -50,15 +51,22 @@ public class WeaponScript : MonoBehaviour
   {
     if (CanAttack)
     {
-      shootCooldown = shootingRate;
+		GameObject creature = GameObject.Find(name);
 
-      // Create a new shot
-      var shotTransform = Instantiate(shotPrefab) as Transform;
 
-      // Assign position
+		shootCooldown = shootingRate;
+
+		      // Create a new shot
+			Transform shotTransform;
+		if(creature.transform.localScale.x > 0)
+			shotTransform = Instantiate(forwardPrefab) as Transform;
+		else
+			shotTransform = Instantiate(backwardPrefab) as Transform;
+			
+		      // Assign position
       shotTransform.position = transform.position;
-
-      // The is enemy property
+	  
+	        // The is enemy property
       ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
       if (shot != null)
       {
@@ -69,7 +77,10 @@ public class WeaponScript : MonoBehaviour
       MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
 
 
-		GameObject creature = GameObject.Find(name);
+
+
+
+
 		//move.direction = script.direction;
 		float coefficient = (float) Math.Sqrt( 1 / (move.direction.x * move.direction.x + move.direction.y * move.direction.y));
 		move.direction.x *= coefficient;
@@ -77,7 +88,9 @@ public class WeaponScript : MonoBehaviour
 		Vector2 ls = creature.transform.localScale;
 		float x = ls.x;
 		move.direction.x *= (x * 10);
+		
 
+	  
 // Kept these as a result of a merge
 //      	Transform enemy = GameObject.Find(enemyName).GetComponent<Transform>();
 
