@@ -75,7 +75,7 @@ public class WeaponScript : MonoBehaviour
 		move.direction.x *= coefficient;
 		move.direction.y *= coefficient;
 		Vector2 ls = creature.transform.localScale;
-		float x = ls.x;
+		float x = ls.x * -1;
 		move.direction.x *= (x * 10);
 
 // Kept these as a result of a merge
