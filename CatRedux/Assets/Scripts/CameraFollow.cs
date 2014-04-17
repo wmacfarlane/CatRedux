@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
 	{
 		// Setting up the reference.
 		player = GameObject.FindGameObjectWithTag("Player").transform;
-		maxXAndY = new Vector3((float)28.3212, (float)100);
+		maxXAndY = new Vector3((float)21.76972, (float)100);
 		minXAndY = new Vector3((float)-0.4984117, (float)1.36408);
 	}
 
