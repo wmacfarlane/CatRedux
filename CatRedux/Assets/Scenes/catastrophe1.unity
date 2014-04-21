@@ -223,8 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fde6cd05711e14e9db0a2221f2d2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backwardPrefab: {fileID: 0}
-  forwardPrefab: {fileID: 0}
+  shotPrefab: {fileID: 400000, guid: 76eb95f468b07da40abd5f6d066902cd, type: 2}
   shootingRate: .25
 --- !u!114 &60957588
 MonoBehaviour:
@@ -409,7 +408,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 764454413}
-  - {fileID: 973489024}
   - {fileID: 1458683111}
   - {fileID: 2028725774}
   - {fileID: 175767875}
@@ -471,8 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fde6cd05711e14e9db0a2221f2d2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backwardPrefab: {fileID: 0}
-  forwardPrefab: {fileID: 0}
+  shotPrefab: {fileID: 400000, guid: ed67c60421b164b82b9150122b1f938b, type: 2}
   shootingRate: 3
 --- !u!1 &337254212
 GameObject:
@@ -513,8 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fde6cd05711e14e9db0a2221f2d2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backwardPrefab: {fileID: 0}
-  forwardPrefab: {fileID: 0}
+  shotPrefab: {fileID: 400000, guid: ed67c60421b164b82b9150122b1f938b, type: 2}
   shootingRate: 3
 --- !u!1 &414444960
 GameObject:
@@ -610,6 +606,10 @@ Prefab:
       propertyPath: m_Center.x
       value: .200000003
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 882723fce6a2c7e4c8ac46410864eca7, type: 2}
+      propertyPath: shotPrefab
+      value: 
+      objectReference: {fileID: 400000, guid: 76eb95f468b07da40abd5f6d066902cd, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 882723fce6a2c7e4c8ac46410864eca7, type: 2}
   m_RootGameObject: {fileID: 60957581}
@@ -893,7 +893,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.200000003, y: 6.4000001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 973489024}
   m_Father: {fileID: 1069962959}
 --- !u!61 &681972572
 BoxCollider2D:
@@ -1110,10 +1111,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 973489023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3499999, y: 4.55000019, z: 0}
+  m_LocalPosition: {x: 4.54999971, y: 3.1500001, z: 10}
   m_LocalScale: {x: .349999994, y: .349999994, z: 1}
   m_Children: []
-  m_Father: {fileID: 249521426}
+  m_Father: {fileID: 681972571}
 --- !u!212 &973489025
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1384,6 +1385,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: .100000001
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 1c2f72ac84660a0469f88f100494a7ff, type: 2}
+      propertyPath: shotPrefab
+      value: 
+      objectReference: {fileID: 400000, guid: ed67c60421b164b82b9150122b1f938b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c2f72ac84660a0469f88f100494a7ff, type: 2}
   m_RootGameObject: {fileID: 2028725769}
@@ -1424,6 +1429,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 1c2f72ac84660a0469f88f100494a7ff, type: 2}
+      propertyPath: shotPrefab
+      value: 
+      objectReference: {fileID: 400000, guid: ed67c60421b164b82b9150122b1f938b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c2f72ac84660a0469f88f100494a7ff, type: 2}
   m_RootGameObject: {fileID: 175767874}

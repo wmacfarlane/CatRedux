@@ -6,8 +6,7 @@ using System;
 public class WeaponScript : MonoBehaviour
 {
 
-  public Transform backwardPrefab;
-  public Transform forwardPrefab;
+  public Transform shotPrefab;
 
 
   public float shootingRate = 0.25f;
@@ -42,11 +41,7 @@ public class WeaponScript : MonoBehaviour
 		shootCooldown = shootingRate;
 
 		      // Create a new shot
-			Transform shotTransform;
-		if(creature.transform.localScale.x > 0)
-			shotTransform = Instantiate(forwardPrefab) as Transform;
-		else
-			shotTransform = Instantiate(backwardPrefab) as Transform;
+		var shotTransform = Instantiate(shotPrefab) as Transform;
 			
 		      // Assign position
       shotTransform.position = transform.position;
