@@ -2,9 +2,7 @@
 
 using UnityEngine;
 
-/// <summary>
-/// Title screen script
-/// </summary>
+
 public class MenuScript : MonoBehaviour
 {
 	private GUISkin skin;
@@ -27,7 +25,6 @@ public class MenuScript : MonoBehaviour
 		
 		// Draw a button to start the game
 		if (GUI.Button(
-			// Center in X, 2/3 of the height in Y
 			new Rect(
 			(Screen.width / 8) - (buttonHeight / 2),
 			(7 * Screen.height / 8) - (buttonHeight / 2),
@@ -43,9 +40,9 @@ public class MenuScript : MonoBehaviour
 
 		GUI.skin = skin2;
 
-		// Draw a button to start the game
+
 		if (GUI.Button(
-			// Center in X, 2/3 of the height in Y
+
 			new Rect(
 			(2 * Screen.width / 8) + (buttonHeight/2),
 			(7 * Screen.height / 8) - (buttonHeight / 2),
@@ -55,7 +52,7 @@ public class MenuScript : MonoBehaviour
 			""
 			))
 		{
-			// On Click, load the first level.
+
 			Application.LoadLevel("catastrophe1"); 
 		}
 

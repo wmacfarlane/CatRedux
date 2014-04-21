@@ -5,30 +5,28 @@
 /// </summary>
 public class Player2Script : MonoBehaviour
 {
-	/// <summary>
-	/// 1 - The speed of the ship
-	/// </summary>
+
 	public Vector2 speed = new Vector2(50, 50);
 	
-	// 2 - Store the movement
+	// Store the movement
 	private Vector2 movement;
 	
 	void Update()
 	{
-		// 3 - Retrieve axis information
+		//Retrieve axis information
 		float inputX = Input.GetAxis("Horizontal2");
 		float inputY = Input.GetAxis("Vertical2");
 		
-		// 4 - Movement per direction
+		//Movement per direction
 		movement = new Vector2(
 			speed.x * inputX,
 			speed.y * inputY);
 		// ...
 		
-		// 5 - Shooting
+		// Shooting
 		bool shoot = Input.GetButtonDown("Fire1");
 		shoot |= Input.GetButtonDown("Fire2");
-		// Careful: For Mac users, ctrl + arrow is a bad idea
+
 		
 		if (shoot)
 		{
@@ -40,7 +38,7 @@ public class Player2Script : MonoBehaviour
 			}
 		}
 		
-		// 6 - Make sure we are not outside the camera bounds
+		// Make sure we are not outside the camera bounds
 		var dist = (transform.position - Camera.main.transform.position).z;
 		
 		var leftBorder = Camera.main.ViewportToWorldPoint(
@@ -70,7 +68,7 @@ public class Player2Script : MonoBehaviour
 	
 	void FixedUpdate()
 	{
-		// 5 - Move the game object
+		// Move the game object
 		rigidbody2D.velocity = movement;
 	}
 }

@@ -6,7 +6,6 @@ using System;
 /// </summary>
 public class MoveScript : MonoBehaviour
 {
-  // 1 - Designer variables
 
   /// <summary>
   /// Object speed
@@ -24,7 +23,7 @@ public class MoveScript : MonoBehaviour
   {
   		double dirCoefficient = Math.Sqrt(1/(direction.x * direction.x + direction.y * direction.y));
     	Vector2 newDir = new Vector2((float) (direction.x * dirCoefficient), (float) (direction.y * dirCoefficient));
-    // 2 - Movement
+    //Movement
     movement = new Vector2(
       speed.x * newDir.x,
       speed.y * newDir.y);

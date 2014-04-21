@@ -5,25 +5,13 @@ using System;
 /// </summary>
 public class WeaponScript : MonoBehaviour
 {
-  //--------------------------------
-  // 1 - Designer variables
-  //--------------------------------
 
-  /// <summary>
-  /// Projectile prefab for shooting
-  /// </summary>
   public Transform backwardPrefab;
   public Transform forwardPrefab;
 
-  /// <summary>
-  /// Cooldown in seconds between two shots
-  /// </summary>
+
   public float shootingRate = 0.25f;
 
-
-  //--------------------------------
-  // 2 - Cooldown
-  //--------------------------------
 
   private float shootCooldown;
 
@@ -40,13 +28,10 @@ public class WeaponScript : MonoBehaviour
     }
   }
 
-  //--------------------------------
-  // 3 - Shooting from another script
-  //--------------------------------
 
-  /// <summary>
+
   /// Create a new projectile if possible
-  /// </summary>
+
   public void Attack(bool isEnemy, string name)
   {
     if (CanAttack)

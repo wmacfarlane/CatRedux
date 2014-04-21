@@ -3,9 +3,7 @@ using System.Collections;
 
 public class SFXScript : MonoBehaviour {
 
-	/// <summary>
-	/// Singleton
-	/// </summary>
+
 	public static SFXScript Instance;
 	
 	public AudioClip deathSound;
@@ -15,7 +13,7 @@ public class SFXScript : MonoBehaviour {
 	
 	void Awake()
 	{
-		// Register the singleton
+
 		if (Instance != null)
 		{
 			Debug.LogError("Multiple instances of SFXScript");
@@ -46,7 +44,7 @@ public class SFXScript : MonoBehaviour {
 
 	/// Play a given sound
 
-	/// <param name="originalClip"></param>
+
 	private void MakeSound(AudioClip originalClip)
 	{
 		// As it is not 3D audio clip, position doesn't matter.

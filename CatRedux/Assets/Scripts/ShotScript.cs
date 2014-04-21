@@ -5,7 +5,6 @@
 /// </summary>
 public class ShotScript : MonoBehaviour
 {
-  // 1 - Designer variables
 
   /// <summary>
   /// Damage inflicted
