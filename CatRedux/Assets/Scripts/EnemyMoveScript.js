@@ -44,11 +44,11 @@ function FixedUpdate()
     
     myTransform.position += diff;
     
- 	 if((targXPos - myXPos).x > 0 && myTransform.localScale.x == -.1) //target should face left
- 	 	myTransform.localScale.x = .1;
- 	 else if((targXPos - myXPos).x < 0 && myTransform.localScale.x == .1) //target should face right
+ 	 if((targXPos - myXPos).x > 0 && myTransform.localScale.x < 0) //target should face left
+ 	 	myTransform.localScale.x = -1 * myTransform.localScale.x;
+ 	 else if((targXPos - myXPos).x < 0 && myTransform.localScale.x > 0) //target should face right
  	 {
- 	 	myTransform.localScale.x = -.1;
+ 	 	myTransform.localScale.x = -1 * myTransform.localScale.x;
 	 }
 }
 function Update () {
