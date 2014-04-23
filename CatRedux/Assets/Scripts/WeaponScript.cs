@@ -9,14 +9,15 @@ public class WeaponScript : MonoBehaviour
   public Transform shotPrefab;
 
 
-  public float shootingRate = 0.35f;
+  public float shootingRate;
 
 
   private float shootCooldown;
 
   void Start()
   {
-    shootCooldown = shootingRate;
+    shootCooldown = 0f;
+    //shootingRate = 2.5f * UnityEngine.Random.Range(.8f, 1.2f);
   }
 
   void Update()
@@ -33,14 +34,14 @@ public class WeaponScript : MonoBehaviour
 
   public void Attack(bool isEnemy, string name)
   {
-      	Debug.Log("can attack");
-
-    if (true)
+  	if(isEnemy)
+  	    shootingRate = 2.5f * UnityEngine.Random.Range(.8f, 1.2f);
+    if (CanAttack)
     {
 		GameObject creature = GameObject.Find(name);
 
 
-		//shootCooldown = shootingRate;
+		shootCooldown = shootingRate;
 
 		      // Create a new shot
 		var shotTransform = Instantiate(shotPrefab) as Transform;
@@ -89,16 +90,9 @@ public class WeaponScript : MonoBehaviour
   /// </summary>
   public bool CanAttack
   {
-  	 get {
-        bool canAttack = ((shootCooldown - UnityEngine.Random.Range(0f, .1f)) <= 0f);
-		if(canAttack)
-		{
-			shootCooldown = shootingRate;
-			return true;
-		}
-		else
-		return false;
-		}
+    get
+    {
+      return shootCooldown <= (0f);
+    }
   }
-  
 }
